@@ -1,0 +1,19 @@
+/* prettier-ignore */
+{
+  "extends": ["eslint:recommended", "react-app"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-expressions": 0,
+    "padded-blocks": 0,
+    "max-len": 0,
+    "no-tabs": 0,
+    "indent": 0,
+    "no-new-object": 0,
+    "no-case-declarations": 0,
+    "no-console": 1
+  }
+}

@@ -37,3 +37,44 @@
     transform: translateY(0px)
   }
 }
+
+.grid-rows {
+  height: 16px;
+  margin: 0;
+}
+
+.grid-rows .grid-square:first-child {
+  border-left: 1px solid black;
+}
+
+p:last-of-type .grid-square {
+  border-bottom: 1px solid black;
+}
+
+.grid-square {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.grid-square-obstacle {
+  background-color: black;
+}
+
+.grid-square-rover {
+  background-color: green;
+}
+
+.grid-square-rover .south {
+
+}
+
+.grid-square-rover .east {
+
+}
+
+.grid-square-rover .west {
+
+}
