@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import { getGrid, getObstacles, getRover } from '../reducers';
 import { getDirectionArrow } from '../common/helpers';
 
-const Grid = ({ obstacles, grid: { x, y }, rover: { current, direction } }) => {
+const Grid = ({
+  className,
+  obstacles,
+  grid: { x, y },
+  rover: { current, direction },
+}) => {
   const renderGrid = () => {
     const gridItems = [];
     const columns = x;
@@ -52,9 +58,9 @@ const Grid = ({ obstacles, grid: { x, y }, rover: { current, direction } }) => {
       }
 
       gridItems.push(
-        <p key={rowsI} className="grid-rows">
+        <div key={rowsI} className="grid-rows">
           {rowItems}
-        </p>
+        </div>
       );
     }
 
@@ -62,11 +68,43 @@ const Grid = ({ obstacles, grid: { x, y }, rover: { current, direction } }) => {
   };
 
   if (Array.isArray(obstacles) && current) {
-    return <div>{renderGrid().map(item => item)}</div>;
+    return <div className={className}>{renderGrid().map(item => item)}</div>;
   }
 
   return null;
 };
+
+const StyledGrid = styled(Grid)`
+  display: inline-block;
+
+  .grid-rows {
+    height: 16px;
+    margin: 0;
+
+    .grid-square {
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+
+      &:first-child {
+        border-left: 1px solid black;
+      }
+      &-obstacle {
+        background-color: black;
+      }
+
+      &-rover {
+        background-color: green;
+      }
+    }
+  }
+
+  div:last-of-type .grid-square {
+    border-bottom: 1px solid black;
+  }
+`;
 
 const mapStateToProps = state => ({
   obstacles: getObstacles(state),
@@ -74,4 +112,4 @@ const mapStateToProps = state => ({
   rover: getRover(state),
 });
 
-export default connect(mapStateToProps, {})(Grid);
+export default connect(mapStateToProps, {})(StyledGrid);

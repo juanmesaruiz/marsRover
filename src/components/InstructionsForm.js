@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import { roverNewInstructionsMove } from '../actions/roverActions';
 import { getGrid, getObstacles } from '../reducers';
 
 import Input from './library/Input';
 
-const InstructionsInput = ({
+const InstructionsForm = ({
+  className,
   roverNewInstructionsMove,
   grid,
   obstaclesCoordinates,
@@ -24,20 +26,30 @@ const InstructionsInput = ({
   );
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <label>
-        Rover Instructions:
-        <Input
-          type="text"
-          name="instructions"
-          placeholder="Type Rover instructions"
-        />
-      </label>
-      <Input type="submit" value="Send" />
-      <Input type="reset" value="Reset" />
+    <form className={className} onSubmit={handleFormSubmit}>
+      <p>
+        <label>
+          Rover Instructions:
+          <Input
+            type="text"
+            name="instructions"
+            placeholder="Type Rover instructions"
+          />
+        </label>
+      </p>
+      <p>
+        <Input type="reset" value="Reset" />
+        <Input className="instructions-send" type="submit" value="Send" />
+      </p>
     </form>
   );
 };
+
+const StyledInstructionsForm = styled(InstructionsForm)`
+  .instructions-send {
+    margin-left: 15px;
+  }
+`;
 
 const mapStateToProps = state => ({
   grid: getGrid(state),
@@ -46,4 +58,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   roverNewInstructionsMove,
-})(InstructionsInput);
+})(StyledInstructionsForm);

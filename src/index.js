@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Home from './pages/Home';
-import configureStore from './store';
 import { Provider } from 'react-redux';
+
+import Home from './pages/Home';
+
+import configureStore from './store';
+
+import './index.css';
 
 const { store } = configureStore();
 

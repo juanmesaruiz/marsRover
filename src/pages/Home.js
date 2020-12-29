@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import {
   roverClear,
@@ -9,12 +10,10 @@ import {
 import { createObstacles } from '../actions/obstaclesActions';
 import { getGrid, getObstacles } from '../reducers';
 
+import Actions from '../components/Actions';
 import Description from '../components/Description';
 import Grid from '../components/Grid';
-import InstructionsInput from '../components/InstructionsInput';
-import LogObstacles from '../components/LogObstacles';
 import LogPosition from '../components/LogPosition';
-import RandomObstacleButton from '../components/RandomObstacleButton';
 import Title from '../components/Title';
 
 import {
@@ -23,9 +22,8 @@ import {
 } from '../common/helpers';
 import { INITIAL_OBSTACLES, KEYBOARDS_CODES } from '../common/constants';
 
-import '../App.css';
-
 const Home = ({
+  className,
   createObstacles,
   grid,
   obstaclesCoordinates,
@@ -63,17 +61,30 @@ const Home = ({
   }, [roverClear]);
 
   return (
-    <div className="App">
-      <Title />
-      <Description />
-      <InstructionsInput />
-      <RandomObstacleButton />
-      <Grid />
-      <LogPosition />
-      <LogObstacles />
+    <div className={className}>
+      <header>
+        <Title />
+      </header>
+      <section>
+        <Description />
+      </section>
+      <main className="obstacles-container">
+        <Grid />
+        <LogPosition />
+        <Actions />
+      </main>
     </div>
   );
 };
+
+const StyledHome = styled(Home)`
+  padding: 50px;
+  text-align: center;
+
+  main {
+    margin-top: 15px;
+  }
+`;
 
 const mapStateToProps = state => ({
   grid: getGrid(state),
@@ -85,4 +96,4 @@ export default connect(mapStateToProps, {
   roverClear,
   roverNewKeyboardMove,
   roverSetPosition,
-})(Home);
+})(StyledHome);

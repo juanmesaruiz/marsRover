@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
 
-const Title = () => (
-    <h1>Mars Rover Mission</h1>
-)
+const Title = ({ className }) => (
+  <h1 className={className}>Mars Rover Mission</h1>
+);
 
-export default Title;
+const StyledTitle = styled(Title)`
+  margin: 0 0 30px;
+`;
+
+export default StyledTitle;

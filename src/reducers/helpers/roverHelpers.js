@@ -1,6 +1,8 @@
 import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../../common/constants';
 import { isCorrectMovement } from '../../common/helpers';
 
+const getObstacleFound = ({ x, y }) => `Obstacle - X ${x}, Y ${y}`;
+
 const getStateCheckingMovement = ({
   grid,
   obstaclesCoordinates,
@@ -12,10 +14,10 @@ const getStateCheckingMovement = ({
     return {
       current: newPosition,
       direction: newDirection,
-      log: [...state.log, state.current],
+      log: [state.current, ...state.log],
     };
   }
-  return state;
+  return { ...state, log: [getObstacleFound(newPosition), ...state.log] };
 };
 
 export const getNewRoverState = ({
