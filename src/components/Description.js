@@ -26,7 +26,7 @@ const Description = () => (
       </li>
     </ol>
     <p>
-      We generate randomly 20 obstacles and the rover position aswell, so
+      We generate randomly 50 obstacles and the rover position aswell, so
       everytime we refresh the page we will get different grid configurations.
       At the same time, we add a button to add a random obstacle everytime we
       click on it.
@@ -34,8 +34,8 @@ const Description = () => (
     <p>
       We can see in live in the grid the rover movement, and we have 2 logs to
       check the coordinates of obstacles and rover historic movement. At the
-      same obstacle log, if you want, you can remove the obstacle using the X on
-      it.
+      same obstacle log, if you want, you can remove the obstacle using the
+      Delete button on each one.
     </p>
   </>
 );

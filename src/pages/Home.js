@@ -1,29 +1,29 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { getGrid, getObstacles } from '../reducers';
 import {
   roverClear,
   roverNewKeyboardMove,
   roverSetPosition,
 } from '../actions/roverActions';
 import { createObstacles } from '../actions/obstaclesActions';
-
-import Input from '../components/library/Input';
+import { getGrid, getObstacles } from '../reducers';
 
 import Description from '../components/Description';
 import Grid from '../components/Grid';
+import InstructionsInput from '../components/InstructionsInput';
 import LogObstacles from '../components/LogObstacles';
 import LogPosition from '../components/LogPosition';
 import RandomObstacleButton from '../components/RandomObstacleButton';
 import Title from '../components/Title';
 
-import '../App.css';
 import {
   getRandomCoordinates,
   getRandomRoverPosition,
 } from '../common/helpers';
-import { KEYBOARDS_CODES } from '../common/constants';
+import { INITIAL_OBSTACLES, KEYBOARDS_CODES } from '../common/constants';
+
+import '../App.css';
 
 const Home = ({
   createObstacles,
@@ -34,7 +34,7 @@ const Home = ({
   roverSetPosition,
 }) => {
   useEffect(() => {
-    const obstaclesCoordinates = getRandomCoordinates(grid, 20);
+    const obstaclesCoordinates = getRandomCoordinates(grid, INITIAL_OBSTACLES);
     const roverPosition = getRandomRoverPosition(grid, obstaclesCoordinates);
     createObstacles(obstaclesCoordinates);
     roverSetPosition(roverPosition);
@@ -66,7 +66,7 @@ const Home = ({
     <div className="App">
       <Title />
       <Description />
-      <Input />
+      <InstructionsInput />
       <RandomObstacleButton />
       <Grid />
       <LogPosition />

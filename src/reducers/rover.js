@@ -1,10 +1,12 @@
 import {
   ROVER_CLEAR,
+  ROVER_CLEAR_POSITION_LOG,
+  ROVER_NEW_INSTRUCTIONS,
   ROVER_NEW_MOVE,
   ROVER_SET_POSITION,
 } from '../actions/actionTypes';
 
-import { ROVER_DIRECTION } from '../common/constants';
+import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../common/constants';
 
 import { getRoverMovementFromCode } from '../common/helpers';
 import { getNewRoverState } from './helpers/roverHelpers';
@@ -19,6 +21,31 @@ const rover = (state = defaultState, action) => {
   switch (action.type) {
     case ROVER_CLEAR:
       return defaultState;
+
+    case ROVER_CLEAR_POSITION_LOG:
+      return { ...state, log: [] };
+
+    case ROVER_NEW_INSTRUCTIONS: {
+      const { instructions, grid, obstaclesCoordinates } = action.payload;
+      const instructionsArray = [...instructions];
+      let newState = { ...state };
+
+      instructionsArray.forEach(instruction => {
+        const roverMovement = ROVER_MOVEMENT[instruction.toUpperCase()];
+        const { current, direction } = newState;
+        if (roverMovement) {
+          newState = getNewRoverState({
+            current,
+            direction,
+            grid,
+            obstaclesCoordinates,
+            roverMovement,
+            state: newState,
+          });
+        }
+      });
+      return newState;
+    }
 
     case ROVER_NEW_MOVE: {
       const { code, grid, obstaclesCoordinates } = action.payload;

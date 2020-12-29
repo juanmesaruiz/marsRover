@@ -11,11 +11,11 @@ const Grid = ({ obstacles, grid: { x, y }, rover: { current, direction } }) => {
     const rows = y;
     let rowsI = 0;
     const obstaclesAvailable = [...obstacles];
-    for (rowsI; rowsI < rows; rowsI++) {
+    for (rowsI; rowsI <= rows; rowsI++) {
       let columnsI = 0;
       const rowItems = [];
 
-      for (columnsI; columnsI < columns; columnsI++) {
+      for (columnsI; columnsI <= columns; columnsI++) {
         const xCoordinate = columnsI;
         const yCoordinate = rows - rowsI;
         const id = `${xCoordinate}-${yCoordinate}`;
@@ -61,7 +61,7 @@ const Grid = ({ obstacles, grid: { x, y }, rover: { current, direction } }) => {
     return gridItems;
   };
 
-  if (obstacles.length && current) {
+  if (Array.isArray(obstacles) && current) {
     return <div>{renderGrid().map(item => item)}</div>;
   }
 

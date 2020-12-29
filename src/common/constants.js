@@ -1,3 +1,11 @@
+export const INITIAL_OBSTACLES = 50;
+
+export const KEYBOARDS_CODES = {
+  A: 'KeyA',
+  D: 'KeyD',
+  W: 'KeyW',
+};
+
 export const ROVER_DIRECTION = {
   N: 'north',
   S: 'south',
@@ -9,10 +17,4 @@ export const ROVER_MOVEMENT = {
   F: 'front',
   L: 'left',
   R: 'right',
-};
-
-export const KEYBOARDS_CODES = {
-  A: 'KeyA',
-  D: 'KeyD',
-  W: 'KeyW',
 };
