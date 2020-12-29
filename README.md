@@ -29,11 +29,11 @@ To install the dependencies needed to run it.
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.<br />
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode and collecting coverage.<br />
+This project has a 100% test coverage.

@@ -7,11 +7,11 @@ import { getRover } from '../reducers';
 
 import Button from './library/Button';
 
-const getLogText = obstacle => {
-  if (typeof obstacle === 'string') {
-    return obstacle;
+const getLogText = position => {
+  if (typeof position === 'string') {
+    return position;
   }
-  return `X ${obstacle.x}, Y ${obstacle.y}`;
+  return `X ${position.x}, Y ${position.y}`;
 };
 
 const LogPosition = ({
@@ -40,8 +40,8 @@ const LogPosition = ({
       <Button onClick={handleClearLog}>Clear Log</Button>
       <p>Last positions: </p>
       <div className="positions-container">
-        {log.map((obstacle, i) => (
-          <p key={i}>{getLogText(obstacle)}</p>
+        {log.map((position, i) => (
+          <p key={i}>{getLogText(position)}</p>
         ))}
       </div>
     </div>

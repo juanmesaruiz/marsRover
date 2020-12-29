@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogObstacles test suite Should match snapshot 1`] = `
+.c1 {
+  cursor: pointer;
+}
+
+.c0 .delete-button {
+  float: right;
+  margin-right: 10px;
+}
+
+.c0 .positions-container {
+  height: 225px;
+  overflow: auto;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <p>
+      Total Obstacles 
+      5
+      :
+    </p>
+    <div
+      class="positions-container"
+    >
+      <p>
+        x 
+        0
+         / y 
+        3
+        <button
+          class="c1 delete-button"
+        >
+          Delete
+        </button>
+      </p>
+      <p>
+        x 
+        2
+         / y 
+        1
+        <button
+          class="c1 delete-button"
+        >
+          Delete
+        </button>
+      </p>
+      <p>
+        x 
+        4
+         / y 
+        4
+        <button
+          class="c1 delete-button"
+        >
+          Delete
+        </button>
+      </p>
+      <p>
+        x 
+        3
+         / y 
+        3
+        <button
+          class="c1 delete-button"
+        >
+          Delete
+        </button>
+      </p>
+      <p>
+        x 
+        1
+         / y 
+        4
+        <button
+          class="c1 delete-button"
+        >
+          Delete
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+`;

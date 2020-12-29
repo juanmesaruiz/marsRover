@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstructionsForm test suite Should match snapshot 1`] = `
+.c1 {
+  cursor: pointer;
+}
+
+.c0 .instructions-send {
+  margin-left: 15px;
+}
+
+<div>
+  <form
+    class="c0"
+  >
+    <p>
+      <label
+        for="instructions"
+      >
+        Rover Instructions:
+      </label>
+      <input
+        class=""
+        id="instructions"
+        name="instructions"
+        placeholder="Type Rover instructions"
+        type="text"
+      />
+    </p>
+    <p>
+      <input
+        class="c1"
+        type="reset"
+        value="Reset"
+      />
+      <input
+        class="c1 instructions-send"
+        type="submit"
+        value="Send"
+      />
+    </p>
+  </form>
+</div>
+`;

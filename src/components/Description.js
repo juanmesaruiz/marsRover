@@ -11,26 +11,25 @@ const Description = ({ className }) => (
     </p>
     <p>
       We can send instructions by keyboard one by one or sending a battery of it
-      with an input. <br />
-      The rover can move:
-      <ul>
-        <li>
-          Forward: <b>F</b> in input or <b>W</b> on keyboard
-        </li>
-        <li>
-          Left: <b>L</b> in input or <b>A</b> on keyboard
-        </li>
-        <li>
-          Right: <b>R</b> in input or <b>D</b> on keyboard
-        </li>
-      </ul>
+      with an input.
     </p>
+    The rover can move:
+    <ul>
+      <li>
+        Forward: <b>F</b> in input or <b>W</b> on keyboard
+      </li>
+      <li>
+        Left: <b>L</b> in input or <b>A</b> on keyboard
+      </li>
+      <li>
+        Right: <b>R</b> in input or <b>D</b> on keyboard
+      </li>
+    </ul>
     <p>
       The rover will detect if there are an obstacle in the next movement, if
       there is anything there it will move, if not, it will stay in the same
       position and direction.
     </p>
-
     <p>
       On the first load we generate randomly <b>50 obstacles</b> and the rover
       position aswell, so everytime we refresh the page we will get different

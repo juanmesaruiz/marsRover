@@ -7,7 +7,6 @@ import {
 } from '../actions/actionTypes';
 
 import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../common/constants';
-
 import { getRoverMovementFromCode } from '../common/helpers';
 import { getNewRoverState } from './helpers/roverHelpers';
 

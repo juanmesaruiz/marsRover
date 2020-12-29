@@ -28,7 +28,7 @@ const Grid = ({
         let isObstacle = false;
         let isRoverPosition = false;
 
-        if (xCoordinate === current.x && yCoordinate === current.y) {
+        if (xCoordinate === current?.x && yCoordinate === current?.y) {
           isRoverPosition = true;
         } else if (obstaclesAvailable.length) {
           const obstacleIndex = obstaclesAvailable.findIndex(
@@ -67,11 +67,7 @@ const Grid = ({
     return gridItems;
   };
 
-  if (Array.isArray(obstacles) && current) {
-    return <div className={className}>{renderGrid().map(item => item)}</div>;
-  }
-
-  return null;
+  return <div className={className}>{renderGrid().map(item => item)}</div>;
 };
 
 const StyledGrid = styled(Grid)`

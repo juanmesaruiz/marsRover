@@ -18,7 +18,7 @@ const InstructionsForm = ({
       event.preventDefault();
       roverNewInstructionsMove({
         grid,
-        instructions: event.target.instructions.value,
+        instructions: event?.target?.instructions?.value,
         obstaclesCoordinates,
       });
     },
@@ -28,14 +28,13 @@ const InstructionsForm = ({
   return (
     <form className={className} onSubmit={handleFormSubmit}>
       <p>
-        <label>
-          Rover Instructions:
-          <Input
-            type="text"
-            name="instructions"
-            placeholder="Type Rover instructions"
-          />
-        </label>
+        <label htmlFor="instructions">Rover Instructions:</label>
+        <Input
+          type="text"
+          name="instructions"
+          id="instructions"
+          placeholder="Type Rover instructions"
+        />
       </p>
       <p>
         <Input type="reset" value="Reset" />

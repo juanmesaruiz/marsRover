@@ -2,16 +2,24 @@ import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 
 import { createObstacles } from '../actions/obstaclesActions';
-import { getGrid } from '../reducers';
+import { getGrid, getObstacles, getRover } from '../reducers';
 
 import Button from './library/Button';
 
-import { getRandomCoordinates } from '../common/helpers';
+import { getNewObstaclesCoordinates } from '../common/helpers';
 
-const RandomObstacleButton = ({ createObstacles, grid }) => {
+const RandomObstacleButton = ({
+  createObstacles,
+  grid,
+  obstaclesCoordinates,
+  rover: { current },
+}) => {
   const handleCreateRandomObstacle = useCallback(
-    () => createObstacles(getRandomCoordinates(grid)),
-    [createObstacles, grid]
+    () =>
+      createObstacles(
+        getNewObstaclesCoordinates(grid, current, obstaclesCoordinates)
+      ),
+    [createObstacles, current, grid, obstaclesCoordinates]
   );
 
   return (
@@ -21,6 +29,8 @@ const RandomObstacleButton = ({ createObstacles, grid }) => {
 
 const mapStateToProps = state => ({
   grid: getGrid(state),
+  obstaclesCoordinates: getObstacles(state),
+  rover: getRover(state),
 });
 
 export default connect(mapStateToProps, { createObstacles })(

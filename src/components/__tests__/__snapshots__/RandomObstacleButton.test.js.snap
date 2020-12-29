@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomObstacleButton test suite Should match snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Add random obstacle
+  </button>
+</div>
+`;

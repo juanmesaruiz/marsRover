@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input test suite Should match snapshot 1`] = `
+<div>
+  <input
+    class=""
+  />
+</div>
+`;
+
+exports[`Input test suite Should match snapshot if Input has type reset 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
+<div>
+  <input
+    class="c0"
+    type="reset"
+  />
+</div>
+`;
+
+exports[`Input test suite Should match snapshot if Input has type submit 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
+<div>
+  <input
+    class="c0"
+    type="submit"
+  />
+</div>
+`;

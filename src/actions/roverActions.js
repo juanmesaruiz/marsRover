@@ -14,10 +14,16 @@ export const roverClearPositionLog = () => ({
   type: ROVER_CLEAR_POSITION_LOG,
 });
 
-export const roverSetPosition = position => ({
-  type: ROVER_SET_POSITION,
+export const roverNewInstructionsMove = ({
+  instructions,
+  grid,
+  obstaclesCoordinates,
+}) => ({
+  type: ROVER_NEW_INSTRUCTIONS,
   payload: {
-    position,
+    instructions,
+    grid,
+    obstaclesCoordinates,
   },
 });
 
@@ -30,15 +36,9 @@ export const roverNewKeyboardMove = ({ code, grid, obstaclesCoordinates }) => ({
   },
 });
 
-export const roverNewInstructionsMove = ({
-  instructions,
-  grid,
-  obstaclesCoordinates,
-}) => ({
-  type: ROVER_NEW_INSTRUCTIONS,
+export const roverSetPosition = position => ({
+  type: ROVER_SET_POSITION,
   payload: {
-    instructions,
-    grid,
-    obstaclesCoordinates,
+    position,
   },
 });

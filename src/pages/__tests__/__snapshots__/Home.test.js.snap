@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home test suite Should match snapshot 1`] = `
+.c0 {
+  padding: 50px;
+  text-align: center;
+}
+
+.c0 main {
+  margin-top: 15px;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <header>
+      <code
+        aria-label="Title"
+        name="Title"
+        props="[object Object]"
+      />
+    </header>
+    <section>
+      <code
+        aria-label="Description"
+        name="Description"
+        props="[object Object]"
+      />
+    </section>
+    <main
+      class="obstacles-container"
+    >
+      <code
+        aria-label="Grid"
+        name="Grid"
+        props="[object Object]"
+      />
+      <code
+        aria-label="LogPosition"
+        name="LogPosition"
+        props="[object Object]"
+      />
+      <code
+        aria-label="Actions"
+        name="Actions"
+        props="[object Object]"
+      />
+    </main>
+  </div>
+</div>
+`;
