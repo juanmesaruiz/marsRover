@@ -1,0 +1,15 @@
+{
+  "short_name": "Rover",
+  "name": "Mars Rover Mission",
+  "icons": [
+    {
+      "src": "nasa.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

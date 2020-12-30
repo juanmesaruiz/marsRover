@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = props => <input {...props} />;
+const Input = React.forwardRef((props, ref) => <input {...props} ref={ref} />)
 
 const getStylesBasedOnType = type => {
   switch (type) {

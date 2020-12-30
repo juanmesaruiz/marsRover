@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -13,6 +13,7 @@ const InstructionsForm = ({
   grid,
   obstaclesCoordinates,
 }) => {
+  const inputRef = useRef(null);
   const handleFormSubmit = useCallback(
     event => {
       event.preventDefault();
@@ -21,6 +22,7 @@ const InstructionsForm = ({
         instructions: event?.target?.instructions?.value,
         obstaclesCoordinates,
       });
+      inputRef.current.value = '';
     },
     [grid, obstaclesCoordinates, roverNewInstructionsMove]
   );
@@ -34,6 +36,7 @@ const InstructionsForm = ({
           name="instructions"
           id="instructions"
           placeholder="Type Rover instructions"
+          ref={inputRef}
         />
       </p>
       <p>
