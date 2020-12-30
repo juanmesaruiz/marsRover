@@ -15,9 +15,9 @@ You can try it here: https://juanmesaruiz.github.io/marsRover/
 We can send instructions by keyboard one by one or sending a battery of it with an input.
 
 The rover can move:
- - Forward: F in input or W on keyboard
- - Left: L in input or A on keyboard
- - Right: R in input or D on keyboard
+ - Forward: **F** in input or **W** on keyboard
+ - Left: **L** in input or **A** on keyboard
+ - Right: **R** in input or **D** on keyboard
 
 The rover will detect if there are an obstacle in the next movement, if there is anything there it will move,
 if not, it will stay in the same position and direction.
@@ -41,4 +41,6 @@ Builds the app for production to the `build` folder.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode and collecting coverage.
+
 This project has a 100% test coverage.
+You can view it here: [https://github.com/juanmesaruiz/marsRover/blob/master/coverage](https://htmlpreview.github.io/?https://github.com/juanmesaruiz/marsRover/blob/master/coverage/lcov-report/index.html)
