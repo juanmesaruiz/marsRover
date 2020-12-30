@@ -15,17 +15,17 @@ const isObstacleCoordinates = (obstaclesCoordinates, newPosition) =>
 export const getDirectionArrow = direction => {
   switch (direction) {
     case ROVER_DIRECTION.W:
-      return <span>&#8592;</span>;
+      return <>&#8592;</>;
 
     case ROVER_DIRECTION.E:
-      return <span>&#8594;</span>;
+      return <>&#8594;</>;
 
     case ROVER_DIRECTION.S:
-      return <span>&#8595;</span>;
+      return <>&#8595;</>;
 
     case ROVER_DIRECTION.N:
     default:
-      return <span>&#8593;</span>;
+      return <>&#8593;</>;
   }
 };
 
@@ -100,6 +100,13 @@ export const getRoverMovementFromCode = code => {
       return null;
   }
 };
+
+export const getValidInstructions = instruction =>
+  instruction
+    ?.toUpperCase?.()
+    .split('')
+    .filter(item => Object.keys(ROVER_MOVEMENT).includes(item))
+    .join('') ?? '';
 
 export const isCorrectMovement = ({
   obstaclesCoordinates,

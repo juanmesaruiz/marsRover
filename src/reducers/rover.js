@@ -32,6 +32,7 @@ const rover = (state = defaultState, action) => {
       instructionsArray.forEach(instruction => {
         const roverMovement = ROVER_MOVEMENT[instruction.toUpperCase()];
         const { current, direction } = newState;
+
         if (roverMovement) {
           newState = getNewRoverState({
             current,

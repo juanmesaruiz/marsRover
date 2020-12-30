@@ -68,7 +68,7 @@ const Home = ({
       <section>
         <Description />
       </section>
-      <main className="obstacles-container">
+      <main className="main-container">
         <Grid />
         <LogPosition />
         <Actions />
@@ -81,8 +81,8 @@ const StyledHome = styled(Home)`
   padding: 50px;
   text-align: center;
 
-  main {
-    margin-top: 15px;
+  .main-container {
+    margin-top: 20px;
   }
 `;
 

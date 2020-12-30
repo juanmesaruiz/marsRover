@@ -3,10 +3,11 @@
 exports[`Actions test suite Should match snapshot 1`] = `
 .c0 {
   display: inline-block;
-  height: 416px;
+  height: 376px;
   overflow: hidden;
   border: 1px solid black;
   margin-left: 15px;
+  padding: 20px 20px;
   width: 200px;
 }
 

@@ -6,8 +6,8 @@ exports[`Home test suite Should match snapshot 1`] = `
   text-align: center;
 }
 
-.c0 main {
-  margin-top: 15px;
+.c0 .main-container {
+  margin-top: 20px;
 }
 
 <div>
@@ -29,7 +29,7 @@ exports[`Home test suite Should match snapshot 1`] = `
       />
     </section>
     <main
-      class="obstacles-container"
+      class="main-container"
     >
       <code
         aria-label="Grid"

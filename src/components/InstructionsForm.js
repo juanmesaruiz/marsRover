@@ -6,6 +6,7 @@ import { roverNewInstructionsMove } from '../actions/roverActions';
 import { getGrid, getObstacles } from '../reducers';
 
 import Input from './library/Input';
+import { getValidInstructions } from '../common/helpers';
 
 const InstructionsForm = ({
   className,
@@ -17,20 +18,25 @@ const InstructionsForm = ({
   const handleFormSubmit = useCallback(
     event => {
       event.preventDefault();
+      const inputValue = event?.target?.instructions?.value;
+      const instructions = getValidInstructions(inputValue);
+
+      inputRef.current.value = instructions;
       roverNewInstructionsMove({
         grid,
-        instructions: event?.target?.instructions?.value,
+        instructions,
         obstaclesCoordinates,
       });
-      inputRef.current.value = '';
     },
     [grid, obstaclesCoordinates, roverNewInstructionsMove]
   );
 
   return (
     <form className={className} onSubmit={handleFormSubmit}>
-      <p>
-        <label htmlFor="instructions">Rover Instructions:</label>
+      <div>
+        <label className="label" htmlFor="instructions">
+          Rover Instructions:
+        </label>
         <Input
           type="text"
           name="instructions"
@@ -38,7 +44,7 @@ const InstructionsForm = ({
           placeholder="Type Rover instructions"
           ref={inputRef}
         />
-      </p>
+      </div>
       <p>
         <Input type="reset" value="Reset" />
         <Input className="instructions-send" type="submit" value="Send" />
@@ -48,6 +54,11 @@ const InstructionsForm = ({
 };
 
 const StyledInstructionsForm = styled(InstructionsForm)`
+  .label {
+    display: block;
+    margin: 0 0 5px;
+  }
+
   .instructions-send {
     margin-left: 15px;
   }

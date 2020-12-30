@@ -26,39 +26,56 @@ const LogPosition = ({
   return (
     <div className={className}>
       {current && (
-        <p>
-          Current position:
-          <br />
+        <div>
+          <span className="current">Current position:</span>
           <b>
             X {current.x}, Y {current.y}
           </b>
-        </p>
+        </div>
       )}
-      <p>
+      <p className="direction">
         Current direction: <b>{direction}</b>
       </p>
       <Button onClick={handleClearLog}>Clear Log</Button>
-      <p>Last positions: </p>
-      <div className="positions-container">
-        {log.map((position, i) => (
-          <p key={i}>{getLogText(position)}</p>
-        ))}
-      </div>
+      {!!log.length && (
+        <>
+          <h5 className="title">Last positions: </h5>
+          <div className="positions-container">
+            {log.map((position, i) => (
+              <p key={i}>{getLogText(position)}</p>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
 const StyledLogPosition = styled(LogPosition)`
   display: inline-block;
-  height: 416px;
+  height: 376px;
   overflow: hidden;
   border: 1px solid black;
   margin-left: 30px;
+  padding: 20px 20px;
   width: 200px;
+
+  .current {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .direction {
+    margin: 20px 0 18px;
+  }
 
   .delete-button {
     float: right;
     margin-right: 30px;
+  }
+
+  .title {
+    margin: 23px 0 0 0;
   }
 
   .positions-container {

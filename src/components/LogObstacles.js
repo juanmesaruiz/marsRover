@@ -15,11 +15,11 @@ const LogObstacles = ({ className, deleteObstacle, obstacles }) => {
 
   return (
     <div className={className}>
-      <p>Total Obstacles {obstacles.length}:</p>
+      <h5 className="title">Total obstacles {obstacles.length}:</h5>
       <div className="positions-container">
         {obstacles.map(({ x, y }) => (
           <p key={`${x}-${y}`}>
-            x {x} / y {y}
+            X {x}, Y {y}
             <Button
               className="delete-button"
               onClick={() => handleDeleteObstacle({ x, y })}
@@ -36,7 +36,11 @@ const LogObstacles = ({ className, deleteObstacle, obstacles }) => {
 const StyledLogObstacles = styled(LogObstacles)`
   .delete-button {
     float: right;
-    margin-right: 10px;
+    margin-right: 20px;
+  }
+
+  .title {
+    margin: 25px 0 0;
   }
 
   .positions-container {

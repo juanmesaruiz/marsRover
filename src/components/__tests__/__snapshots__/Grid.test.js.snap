@@ -3,10 +3,12 @@
 exports[`Grid test suite Should match snapshot 1`] = `
 .c0 {
   display: inline-block;
+  margin-bottom: 15px;
+  vertical-align: top;
 }
 
 .c0 .grid-rows {
-  height: 16px;
+  line-height: 0;
   margin: 0;
 }
 
@@ -14,8 +16,11 @@ exports[`Grid test suite Should match snapshot 1`] = `
   border-top: 1px solid black;
   border-right: 1px solid black;
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  height: 1vw;
+  max-width: 15px;
+  max-height: 15px;
+  position: relative;
+  width: 1vw;
 }
 
 .c0 .grid-rows .grid-square:first-child {
@@ -28,6 +33,16 @@ exports[`Grid test suite Should match snapshot 1`] = `
 
 .c0 .grid-rows .grid-square-rover {
   background-color: green;
+}
+
+.c0 .grid-rows .grid-square .grid-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 1vw;
 }
 
 .c0 div:last-of-type .grid-square {
@@ -197,7 +212,9 @@ exports[`Grid test suite Should match snapshot 1`] = `
         class="grid-square grid-square-rover"
         id="2-2"
       >
-        <span>
+        <span
+          class="grid-arrow"
+        >
           →
         </span>
       </div>

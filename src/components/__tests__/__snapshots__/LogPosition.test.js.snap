@@ -7,16 +7,30 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
 
 .c0 {
   display: inline-block;
-  height: 416px;
+  height: 376px;
   overflow: hidden;
   border: 1px solid black;
   margin-left: 30px;
+  padding: 20px 20px;
   width: 200px;
+}
+
+.c0 .current {
+  display: block;
+  margin: 0 0 5px;
+}
+
+.c0 .direction {
+  margin: 20px 0 18px;
 }
 
 .c0 .delete-button {
   float: right;
   margin-right: 30px;
+}
+
+.c0 .title {
+  margin: 23px 0 0 0;
 }
 
 .c0 .positions-container {
@@ -28,17 +42,22 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
   <div
     class="c0"
   >
-    <p>
-      Current position:
-      <br />
+    <div>
+      <span
+        class="current"
+      >
+        Current position:
+      </span>
       <b>
         X 
         2
         , Y 
         2
       </b>
-    </p>
-    <p>
+    </div>
+    <p
+      class="direction"
+    >
       Current direction: 
       <b>
         east
@@ -49,9 +68,11 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
     >
       Clear Log
     </button>
-    <p>
+    <h5
+      class="title"
+    >
       Last positions: 
-    </p>
+    </h5>
     <div
       class="positions-container"
     >

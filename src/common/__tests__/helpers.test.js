@@ -6,6 +6,7 @@ import {
   getRandomCoordinates,
   getRandomRoverPosition,
   getRoverMovementFromCode,
+  getValidInstructions,
 } from '../helpers';
 import { KEYBOARDS_CODES, ROVER_DIRECTION, ROVER_MOVEMENT } from '../constants';
 
@@ -22,31 +23,23 @@ describe('helpers', () => {
 
   describe('getDirectionArrow', () => {
     it('ROVER_DIRECTION.W', () => {
-      expect(getDirectionArrow(ROVER_DIRECTION.W)).toEqual(
-        <span>&#8592;</span>
-      );
+      expect(getDirectionArrow(ROVER_DIRECTION.W)).toEqual(<>&#8592;</>);
     });
 
     it('ROVER_DIRECTION.E', () => {
-      expect(getDirectionArrow(ROVER_DIRECTION.E)).toEqual(
-        <span>&#8594;</span>
-      );
+      expect(getDirectionArrow(ROVER_DIRECTION.E)).toEqual(<>&#8594;</>);
     });
 
     it('ROVER_DIRECTION.S', () => {
-      expect(getDirectionArrow(ROVER_DIRECTION.S)).toEqual(
-        <span>&#8595;</span>
-      );
+      expect(getDirectionArrow(ROVER_DIRECTION.S)).toEqual(<>&#8595;</>);
     });
 
     it('ROVER_DIRECTION.N', () => {
-      expect(getDirectionArrow(ROVER_DIRECTION.N)).toEqual(
-        <span>&#8593;</span>
-      );
+      expect(getDirectionArrow(ROVER_DIRECTION.N)).toEqual(<>&#8593;</>);
     });
 
     it('default', () => {
-      expect(getDirectionArrow(undefined)).toEqual(<span>&#8593;</span>);
+      expect(getDirectionArrow(undefined)).toEqual(<>&#8593;</>);
     });
   });
 
@@ -152,6 +145,23 @@ describe('helpers', () => {
 
     it('default', () => {
       expect(getRoverMovementFromCode(undefined)).toBeNull();
+    });
+  });
+
+  describe('getValidInstructions', () => {
+    it('should return correct values', () => {
+      const initialValue = 'FfRrLlQWEqweFfRrLl';
+      const expectedValue = 'FFRRLLFFRRLL';
+
+      expect(getValidInstructions(initialValue)).toEqual(expectedValue);
+    });
+
+    it('should return empty string if we do not send instructions', () => {
+      expect(getValidInstructions()).toEqual('');
+    });
+
+    it('should return empty string if we send invalid instruction', () => {
+      expect(getValidInstructions(0)).toEqual('');
     });
   });
 });

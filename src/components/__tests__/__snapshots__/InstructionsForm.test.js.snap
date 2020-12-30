@@ -5,6 +5,11 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c0 .label {
+  display: block;
+  margin: 0 0 5px;
+}
+
 .c0 .instructions-send {
   margin-left: 15px;
 }
@@ -13,8 +18,9 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
   <form
     class="c0"
   >
-    <p>
+    <div>
       <label
+        class="label"
         for="instructions"
       >
         Rover Instructions:
@@ -26,7 +32,7 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
         placeholder="Type Rover instructions"
         type="text"
       />
-    </p>
+    </div>
     <p>
       <input
         class="c1"

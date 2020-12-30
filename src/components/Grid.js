@@ -52,7 +52,11 @@ const Grid = ({
             id={id}
             key={id}
           >
-            {isRoverPosition ? getDirectionArrow(direction) : ''}
+            {isRoverPosition ? (
+              <span className="grid-arrow">{getDirectionArrow(direction)}</span>
+            ) : (
+              ''
+            )}
           </div>
         );
       }
@@ -72,17 +76,22 @@ const Grid = ({
 
 const StyledGrid = styled(Grid)`
   display: inline-block;
+  margin-bottom: 15px;
+  vertical-align: top;
 
   .grid-rows {
-    height: 16px;
+    line-height: 0;
     margin: 0;
 
     .grid-square {
       border-top: 1px solid black;
       border-right: 1px solid black;
       display: inline-block;
-      width: 15px;
-      height: 15px;
+      height: 1vw;
+      max-width: 15px;
+      max-height: 15px;
+      position: relative;
+      width: 1vw;
 
       &:first-child {
         border-left: 1px solid black;
@@ -93,6 +102,14 @@ const StyledGrid = styled(Grid)`
 
       &-rover {
         background-color: green;
+      }
+
+      .grid-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1vw;
       }
     }
   }

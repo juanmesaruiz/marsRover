@@ -7,7 +7,11 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
 
 .c0 .delete-button {
   float: right;
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+.c0 .title {
+  margin: 25px 0 0;
 }
 
 .c0 .positions-container {
@@ -19,18 +23,20 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
   <div
     class="c0"
   >
-    <p>
-      Total Obstacles 
+    <h5
+      class="title"
+    >
+      Total obstacles 
       5
       :
-    </p>
+    </h5>
     <div
       class="positions-container"
     >
       <p>
-        x 
+        X 
         0
-         / y 
+        , Y 
         3
         <button
           class="c1 delete-button"
@@ -39,9 +45,9 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
         </button>
       </p>
       <p>
-        x 
+        X 
         2
-         / y 
+        , Y 
         1
         <button
           class="c1 delete-button"
@@ -50,9 +56,9 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
         </button>
       </p>
       <p>
-        x 
+        X 
         4
-         / y 
+        , Y 
         4
         <button
           class="c1 delete-button"
@@ -61,9 +67,9 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
         </button>
       </p>
       <p>
-        x 
+        X 
         3
-         / y 
+        , Y 
         3
         <button
           class="c1 delete-button"
@@ -72,9 +78,9 @@ exports[`LogObstacles test suite Should match snapshot 1`] = `
         </button>
       </p>
       <p>
-        x 
+        X 
         1
-         / y 
+        , Y 
         4
         <button
           class="c1 delete-button"
